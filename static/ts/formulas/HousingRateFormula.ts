@@ -7,7 +7,8 @@ class HousingRateFormula extends BaseCreditFormula {
     calculateResults(input: Dictionary<number>): Dictionary<number> {
         let output = new Dictionary<number>();
 
-        output.put('rate', this.getCreditRate(input.get('credit-amount'), input.get('number-of-months')));
+        output.put('rate', this.getCreditRate(
+            input.get('credit-amount'), input.get('number-of-months')));
         return output;
     }
 

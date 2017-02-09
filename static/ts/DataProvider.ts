@@ -1,3 +1,5 @@
+var calculatorData : any = calculatorData || {};
+
 class DataProvider {
 
     private static instance : DataProvider = null;
@@ -12,7 +14,7 @@ class DataProvider {
 
 
     private constructor() {
-
+        // TODO: procitaj json s vrijednostima koji je ispucan na site
     }
 
     /**

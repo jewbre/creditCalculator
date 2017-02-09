@@ -1,5 +1,7 @@
+var calculatorData = calculatorData || {};
 var DataProvider = (function () {
     function DataProvider() {
+        // TODO: procitaj json s vrijednostima koji je ispucan na site
     }
     DataProvider.getInstance = function () {
         if (DataProvider.instance == null) {

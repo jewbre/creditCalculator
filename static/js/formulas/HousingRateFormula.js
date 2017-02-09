@@ -13,8 +13,7 @@ var HousingRateFormula = (function (_super) {
     };
     HousingRateFormula.prototype.calculateResults = function (input) {
         var output = new Dictionary();
-        // TODO: izracunaj gluposti
-        output.put('iznos-rate', 1000);
+        output.put('rate', this.getCreditRate(input.get('credit-amount'), input.get('number-of-months')));
         return output;
     };
     return HousingRateFormula;

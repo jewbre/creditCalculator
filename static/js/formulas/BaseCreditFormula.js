@@ -47,5 +47,42 @@ var BaseCreditFormula = (function (_super) {
     BaseCreditFormula.prototype.getAverageDaysInMonth = function () {
         return 30.42;
     };
+    /**
+     * Calculates credit rate base on the following formula:
+     *                  K
+     * ---------------------------------------
+     *                                1
+     *  Sum(i=1..nbe) Prod(j=1..i) --------
+     *                              1 + Tj
+     *
+     *  Where :
+     *  K = Base debt
+     *  nbe = number of rates
+     *  Tj = global rate that is calculated by following formula:
+     *
+     *  Ti = ti * Ni / 360
+     *  where:
+     *      ti = nominal credit rate at current year
+     *      Ni = real number of days in month
+     *
+     * @param dept
+     * @param months
+     * @returns {number}
+     */
+    BaseCreditFormula.prototype.getCreditRate = function (dept, months) {
+        var divider = 0;
+        for (var i = 1; i <= months; i++) {
+            for (var j = 1; j <= i; j++) {
+                divider += (1 / (1 + DataProvider.getInstance().getNCR(j) * this.getDaysInMonth(j) / 360));
+            }
+        }
+        return dept / divider;
+    };
+    BaseCreditFormula.prototype.getDaysInMonth = function (monthsFromNow) {
+        var date = new Date();
+        date.setMonth(date.getMonth() + 1 + monthsFromNow);
+        date.setDate(0);
+        return date.getDate();
+    };
     return BaseCreditFormula;
 }(Formula));

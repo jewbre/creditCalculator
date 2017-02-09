@@ -13,7 +13,9 @@ var Calculator = (function () {
     };
     Calculator.prototype.setListener = function (selector, key) {
         var self = this;
+        console.log("Setting listener for " + selector + " : " + key);
         $(selector).on('change', function () {
+            console.log("change happened");
             self.dataSet.put(key, parseInt($(this).val(), 10));
             self.recalculate();
         });

@@ -6,24 +6,23 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var HousingCalculator = (function (_super) {
     __extends(HousingCalculator, _super);
-    function HousingCalculator() {
-        return _super !== null && _super.apply(this, arguments) || this;
+    function HousingCalculator(dataSet, formula) {
+        return _super.call(this, dataSet, formula) || this;
     }
     HousingCalculator.prototype.getListenerItems = function () {
         return [
             {
-                selector: '#prvi-slider',
-                key: 'iznos-kredita'
+                selector: '#credit-amount',
+                key: 'credit-amount'
             },
             {
-                selector: '#broj-mjeseci',
-                key: 'broj-mjeseci'
+                selector: '#number-of-months',
+                key: 'number-of-months'
             },
         ];
     };
     HousingCalculator.prototype.displayResults = function (dictionary) {
-        $('#result-1').text(dictionary.get('nks'));
-        $('#result-2').text(dictionary.get('rata-kredita'));
+        console.log(dictionary.get('rate'));
     };
     return HousingCalculator;
 }(Calculator));

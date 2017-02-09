@@ -1,22 +1,26 @@
 /// <reference path="../../typings/jquery.d.ts" />
 
 class HousingCalculator extends Calculator<HousingRateFormula> {
+
+    constructor(dataSet: Dictionary<number>, formula: HousingRateFormula) {
+        super(dataSet, formula);
+    }
+
     protected getListenerItems(): {selector: string; key: string}[] {
         return [
             {
-                selector : '#prvi-slider',
-                key : 'iznos-kredita'
+                selector : '#credit-amount',
+                key : 'credit-amount'
             },
             {
-                selector : '#broj-mjeseci',
-                key : 'broj-mjeseci'
+                selector : '#number-of-months',
+                key : 'number-of-months'
             },
         ];
     }
 
     protected displayResults(dictionary: Dictionary<number>): void {
-        $('#result-1').text(dictionary.get('nks'));
-        $('#result-2').text(dictionary.get('rata-kredita'));
+        console.log(dictionary.get('rate'));
     }
 
 }

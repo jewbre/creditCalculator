@@ -20,7 +20,9 @@ abstract class Calculator<F extends Formula<number, number>> {
 
     private setListener(selector: string, key: string) {
         let self = this;
+        console.log(`Setting listener for ${selector} : ${key}`);
         $(selector).on('change', function() {
+            console.log("change happened");
             self.dataSet.put(key, parseInt($(this).val(), 10));
             self.recalculate();
         })

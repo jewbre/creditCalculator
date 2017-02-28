@@ -1,0 +1,15 @@
+$susy: (
+        columns: 24,
+        gutters: 50,
+        math: fluid,
+        output: float,
+        gutter-position: after,
+        global-box-sizing: border-box,
+        use-custom: (rem: true)
+);
+
+$gallery_layout:(
+    gutters: 20/58.75
+);
+
+

@@ -1,0 +1,133 @@
+﻿.hidden-container{
+    max-width:848px;
+    margin:0 auto;
+    border-width:1px 0 1px 0;
+    border-style:solid;
+    border-color: #e6e6e6;
+    margin-bottom:45px;
+    box-shadow: 0px 7px 18px -14px rgba(0,0,0,0.15);
+    @include breakpoint($xs){
+        margin-bottom:20px;
+    }
+    &:after{
+        content:'';
+        clear:both;
+        display:table;
+    }
+    &__header{
+        padding:15px 36px 18px;
+        position:relative;
+        text-align:center;
+        .trigger{
+            position:absolute;
+            top:50%;
+            right:14px;
+            width:22px;
+            @include transform(translateY(-50%));
+            @include transition(all,0.3s,0s,2);
+            will-change:opacity;
+            &.is-active{
+                .icon{
+                    @include transform(rotate(-90deg));
+                }
+            }
+            .icon{
+                fill:$main-color;
+                width:14px;
+                height: 22px;
+                @include transform(rotate(90deg));
+                will-change:transform;
+            }
+            &:hover{
+                opacity:0.8;
+            }
+        }
+    }
+    &__header-title{
+        color:$gray-color;
+        font-size:em(20);
+        @include breakpoint($xs){
+            font-size:em(16);
+        }
+        @extend .font-main-medium;
+    }
+
+    &__content{
+        padding:0 50px;      
+        display:none;
+        @include breakpoint($sm){
+            padding:0 30px; 
+            .general-text{
+                padding:0;
+            }
+        }
+    }
+    &__content-title{
+        font-size:em(19);
+        @extend .font-main-medium;
+        line-height:line-height(19, 23);
+        position:relative;
+        padding:0 50px;
+        text-align:center;
+        margin:30px 0 33px;
+        color: #4a4a4a;
+        float:left;
+        width:100%;
+        @include breakpoint($sm){
+            font-size:em(17);
+            padding: 0 38px;
+        }
+        &:after{
+            content:'';
+            clear:both;
+            display:table;
+        }
+        .trigger{
+            position:absolute;
+            top:50%;
+            right:10px;
+            width:26px;
+            height:26px;
+            border: 1px solid #9c9c9c;
+            border-radius:50%;
+            @include transform(translateY(-50%));
+            background:url("../img/plus-minus.png") center 5px no-repeat;
+            &.is-active{
+                background-position:center -15px;
+            }
+        }
+
+    }
+
+    &__additional-content{
+        display:none;
+    }
+    &__close-content{
+        padding:15px 0;
+        display:none;
+        &:after{
+            content:'';
+            clear:both;
+            display:table;
+        }
+    }
+    &__close{
+        font-size:em(13);
+        float:right;
+        color: #a6a6a6;
+        margin-right:15px;
+        @include breakpoint($sm){
+            margin-right:0;
+        }
+        span{
+            vertical-align:middle;
+        }
+        .icon{
+            width:14px;
+            height:14px;
+            fill:#686b6e;
+            margin-left:6px;
+            vertical-align:middle;
+        }
+    }
+}

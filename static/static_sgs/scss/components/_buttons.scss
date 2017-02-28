@@ -1,0 +1,106 @@
+.btn {
+    background-color:$main-color;
+    color: $white;
+    text-align:center;
+    @extend .font-main-medium;
+    font-size:em(14);
+    @include transition(all,0.3s,0s,2);
+    cursor:pointer;
+    display:inline-block;
+    border-radius:3px;
+    &:hover{
+        background-color:$main-color-darker;
+    }
+
+    &--full-radius{
+        border-radius:100px;
+    }
+
+    &--inversely{
+        border: 2px solid $main-color;
+        background:$white;
+        color: #4a4a4a;
+        &:hover{
+            background-color:$main-color;
+            color: $white;
+        }
+    }
+
+    &--white{
+        background-color:$white;
+        color:$main-color;
+        &:hover{
+            background-color:$white;
+            color:$main-color;
+        } 
+    }
+
+    &--brown{
+        background-color:#ae9258;
+        color:$white;
+        &:hover{
+            background-color:#ae9258;
+            color:$white;
+        } 
+    }
+
+    &--arrow{
+         text-align:left;
+         padding-left:40px;
+         padding-right:40px;
+         height:50px;
+         line-height:50px;
+        .icon{
+            width:12px;
+            height:10px;
+            margin-left:6px;
+            will-change:transform;
+        }
+        &:hover{
+            .icon{
+                @include transform(translateX(10px));
+            }
+        }
+    }
+
+    &--center{
+        display:table;
+        margin:0 auto;
+    }
+
+    &--border{
+        border:2px solid #e6e6e6;
+        line-height:46px;
+    }
+
+    &--big-font{
+        font-size:em(16);
+    }
+
+    span{
+        vertical-align:middle;
+    }
+
+    .icon{
+        vertical-align:middle;   
+        @include transition(all,0.25s,0s,1);    
+    }
+
+}
+
+.btn--transparent{
+    background-color:transparent;
+    color:$main-color;
+    .icon-arow_lead{
+        vertical-align:middle;
+        margin-left:6px;
+        @include transition(all,0.3s,0s,2);
+        will-change:transform;
+    }
+    &:hover{
+        background-color:transparent;
+        .icon-arow_lead{
+            @include transform(translateX(10px));
+        }
+    }  
+}

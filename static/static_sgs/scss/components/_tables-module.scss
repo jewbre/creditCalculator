@@ -1,0 +1,226 @@
+.table-content{
+    max-width:747px;
+    margin:0 auto;
+    @include breakpoint($sm){
+        padding:0 15px;
+    }
+    &--top-space{
+        margin-top:30px;
+    }
+    &--bottom-space{
+        margin-bottom:45px;
+    }
+    &__title{
+        text-align:center;
+        padding:65px 30px 40px;
+        p{
+            @extend .font-main-medium;
+            font-size:em(18);
+            color:#4a4a4a;
+            margin-top:35px;
+        }
+    }
+    .table{
+        border-collapse: collapse;
+        tr{
+            border-top:1px solid #e6e6e6;
+            &:last-child{
+                border-bottom:1px solid #e6e6e6;
+            }
+            &:nth-child(2n+1){
+                background:#f7f7f7;
+            }
+            th, td{
+                color:$gray-color;
+                font-size:em(17);
+                font-weight:normal;
+                padding:12px 20px;
+                @include breakpoint($sm){
+                    font-size:em(12); 
+                    padding:10px;
+                }
+            }
+            th{
+                width:33.33%;
+                &.text-right{
+                    text-align:right !important;
+                }
+                &.text-center{
+                    text-align:center !important;
+                }
+            }
+            td{
+                text-align:center;
+                &.text-right{
+                    text-align:right !important;
+                }
+                &.text-center{
+                    text-align:center !important;
+                }
+            }
+            &.bold{
+                @extend .font-main-bold;
+            }
+            &.text-center{
+                td, th{
+                    text-align:center;
+                }                
+            }
+        }
+        &.materials{
+            tr{
+                th{
+                    width:66.66%;
+                }
+                td{
+                    padding:5px 15px;
+                    width:8.3325%;
+                }
+            }
+            .download{
+                @include transition(all,0.3s,0s,1);
+                .icon{
+                    height: 24px;
+                    width: 24px;
+                    fill:$main-color;
+                }
+                &:hover{
+                    opacity:0.8
+                }
+            }
+        }
+        &.multi-columns{
+            tr{
+                th{
+                    font-size:em(13);
+                    padding:10px 15px;
+                    @extend .font-main-bold;
+                    text-align:center;
+                    line-height:line-height(13, 18);
+                    @include breakpoint($sm){
+                        font-size:em(12);
+                    }
+                }
+                td{
+                    font-size:em(13);
+                    padding-left:15px;
+                    padding-right:15px;
+                    @include breakpoint($sm){
+                        font-size:em(12);
+                    }
+                }
+            }
+        }
+        &.price{
+            thead{
+                tr{
+                    background:$white;
+                    border-top:0;
+                }
+            }
+            tr{
+                th{
+                    font-size:em(12);
+                    padding:5px 20px;
+                    @include breakpoint($sm){
+                        padding-left:10px;
+                        padding-right:10px;
+                    }
+                }
+                td{
+                    font-size:em(22);
+                    padding-left:20px;
+                    padding-right:20px;
+                    @extend .font-main-medium;
+                    text-align:left;
+                    @include breakpoint($sm){
+                        padding-left:10px;
+                        padding-right:10px;
+                        font-size:em(12);
+                    }
+                    sup{
+                        font-size:12px;
+                    }
+                    .old-price{
+                        text-decoration:line-through;
+                        color:$main-color;
+                        margin-right:5px;
+                        float: left;
+                    }
+                    .price{
+                        min-width: 88px;
+                        display: inline-block;
+                        float: right;
+                    }
+                }
+            }
+        }
+        &.brochure-documents{
+            margin:35px 0 0;
+            thead{
+                tr{
+                    border:0;
+                }
+            }
+            tr{
+                &:nth-child(2n+1){
+                    background-color:$white;
+                }
+                &:nth-child(2n+2){
+                    background-color:#f7f7f7;
+                }
+                th{
+                    font-size:em(14);
+                    padding:12px 10px;
+                    @extend .font-main-bold;
+                    line-height:line-height(14, 19);
+                    color: #686b6e;
+                    vertical-align:top;                 
+                    &:first-child{
+                        max-width:25%;
+                        @include breakpoint($sm){
+                           padding-left:0;
+                        }
+                    }
+                    @include breakpoint($sm){
+                       font-size:em(12);
+                    }
+                }
+                td{
+                    text-align:left;
+                    font-size:em(14);
+                    line-height:line-height(14, 19);
+                    padding-left:10px;
+                    padding-right:10px;
+                    vertical-align:top;
+                    &:first-child{
+                        @include breakpoint($sm){
+                           padding-left:0;
+                        }
+                    }
+                    &:last-child{
+                        @include breakpoint($sm){
+                           padding-right:0;
+                        }
+                    }
+                    a{
+                        color: #686b6e;
+                        text-decoration:underline;
+                    }
+                    @include breakpoint($sm){
+                        font-size:em(11);
+                        line-height:line-height(11, 15);                       
+                    }
+                }
+            }
+        }
+    }
+    &__footnote{
+        font-size:em(13);
+        line-height:line-height(13, 19);
+        padding:0 20px;
+        @include breakpoint($sm){
+            font-size:em(11); 
+        }
+    }
+}

@@ -1,0 +1,108 @@
+﻿.bottom-info{
+    width:100%;
+    max-width: 930px;
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: -1px;
+    z-index: 9999;
+    margin:auto;
+    padding:35px 85px;
+    box-shadow: 0 -3px 4px 1px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e5e5;
+    background-color: $white;
+    @include breakpoint($md){
+        padding:25px;
+    }
+    small{
+        color: #a6a6a6;
+        font-size:em(14);
+        line-height:line-height(14,18);
+        float:left;
+        width:76%;
+        @include breakpoint($md){
+            width:100%;   
+        }
+        @include breakpoint($md){
+            margin-bottom:20px;
+        }
+        @include breakpoint($sm){
+            font-size:em(12);
+            line-height:line-height(12,16);
+        }
+    }
+    .btn{
+        min-width: 130px;
+        height: 37px;
+        line-height:37px;
+        display:block;
+        font-size:em(14);
+        float:right;
+        @include breakpoint($sm){
+            font-size:em(12);
+            min-width:100px !important;
+        }
+    }
+    &__btn-group{
+        float:right;
+        @include breakpoint($md){
+            display:table;
+            margin:0 auto; 
+            float:none;
+        }            
+    }
+    &__close{
+        position:absolute;
+        top:15px;
+        right:15px;
+        cursor:pointer;
+        @include breakpoint($md){
+            top:10px;
+            right:10px 
+        }
+        .icon{
+            width:11px;
+            height:11px;
+            fill:$main-color;
+        }
+    }
+    &--display-none{
+        display:none;
+    }
+    &--geo{
+        padding:35px 70px 35px 35px;
+        @include breakpoint($md){
+            padding:25px;
+        }
+        small{
+            width:54%;
+            padding-left:50px;
+            position:relative;
+            @include breakpoint($md){
+                width:100%;   
+            }
+            .icon-Marker{
+                position:absolute;
+                left:0;
+                top:50%;
+                @include transform(translateY(-50%));
+                float:left;
+                fill:#919191;
+                height: 28px;
+                width: 25px;
+            }
+        }
+        .btn{
+            margin:0 8px;
+            line-height:33px;
+            min-width:132px;
+            @extend .font-main;
+            @include breakpoint($sm){
+                margin:0 4px;
+            }
+            &.btn--white{
+                border-color:#e6e6e6;
+            }
+        }
+    }
+}

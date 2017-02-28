@@ -1,0 +1,74 @@
+﻿.to-top{
+    position:fixed;
+    right:30px;
+    bottom:40px;
+    cursor:pointer;
+    @include transition(all,0.35s,0s,2);
+    opacity:0;
+    visibility:hidden;
+    z-index:999;
+    @include breakpoint($sm){
+        bottom:30px;
+    }
+    @include breakpoint($xs){
+        bottom:15px;
+        right:15px;
+    }
+    &--bottom-space{
+        @include breakpoint($sm){
+            bottom:65px;
+        }       
+    }
+    &.is--active{
+        opacity:1;
+        visibility:visible;
+    }
+    &__icon{
+        background: rgba(255,255,255,.8);
+        border: 1px solid #fafafa;
+        box-shadow: 0 2px 1px rgba(0, 0, 0, 0.11);
+        border-radius: 50%;
+        display: block;
+        height: 50px;
+        width: 50px;
+        line-height: 50px;
+        text-align: center;
+        margin:0 auto 20px;
+        @include breakpoint($sm){
+            height: 36px;
+            width: 36px;
+            line-height: 36px;
+            margin:0;
+        }
+        span{
+            display:block;
+            transform: rotate(-90deg);
+            svg{
+                width:14px;
+                height:14px;
+                @include transition(all,0.35s,0s,2);
+                @include breakpoint($xs){
+                    width:10px;
+                    height:10px;
+                }
+            }
+        }
+    }
+    &__title{
+        display:block;
+        font-size:em(12);
+        color: #666;
+        @include transition(all,0.35s,0s,2);
+        @include breakpoint($sm){
+            display:none;
+        }
+    }
+    &:hover{
+        svg{
+            fill:$main-color;
+        }
+        .to-top__title{
+            color: #999999;
+        }
+    }
+}

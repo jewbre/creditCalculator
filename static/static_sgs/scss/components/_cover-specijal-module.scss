@@ -1,0 +1,653 @@
+.cover {
+    background: $black;
+    overflow: hidden;
+    height: 90vh;
+    margin-bottom:2px;
+    position:relative;
+    &:after{
+        display:block;
+        position:absolute;
+        top:0;
+        left:0;
+        content:'';
+        width:100%;
+        height:100%;
+        background:rgba(0,0,0,0.4);
+    }
+
+    &--small {
+        height:360px;
+        @include breakpoint($sm) {
+            height:300px;
+        }
+    }
+
+    &--medium {
+        height: 526px;
+
+        @include breakpoint($sm) {
+            height: 400px;
+        }
+    }
+
+    &--big {
+        height: 600px;
+        margin-bottom: 2px;
+
+        @include breakpoint($sm) {
+            height: 480px;
+        }
+
+        @include breakpoint($xs) {
+            height: 440px;
+        }
+    }
+
+    &--double {
+        height: 600px;
+        margin-bottom: 2px;
+
+        @include breakpoint($sm) {
+            height: inherit;
+        }
+    }
+
+    &--brochure {
+        height: 542px;
+        margin-bottom: 0;
+        &:after{
+            display:none;
+        }
+        @include breakpoint($sm) {
+            height: inherit;
+        }
+    }
+
+    &--brochure-cta {
+        @include breakpoint($xs) {
+            height: 440px;
+        }
+    }
+
+    &__image {
+        background: no-repeat center center;
+        background-size: cover;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+        top: 0;
+        left: 0;
+    }
+
+    &__content {
+        display: table;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__inner {
+        display: table-cell;
+        vertical-align: bottom;
+        padding: 40px 50px;
+        position: relative;
+
+        @include breakpoint($sm) {
+            padding-bottom: 60px;
+        }
+
+        @include breakpoint($xs) {
+            padding: 0 45px 30px 45px;
+        }
+
+        h1 {
+            color: $white;
+            font-size: em(35);
+            line-height: line-height(35,40);
+            max-width: 530px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index:1;
+            @include breakpoint($sm) {
+                font-size: em(30);
+                line-height: line-height(30,35);
+            }
+
+            @include breakpoint($xs) {
+                font-size: em(26);
+                line-height: line-height(26,30);
+            }
+        }
+
+        p {
+            color: $white;
+            font-size: em(16);
+            line-height: line-height(16,26);
+            max-width: 530px;
+            position: relative;
+            z-index:1;
+            span {
+                @extend .font-main-bold;
+            }
+
+            @include breakpoint($xs) {
+                font-size: em(15);
+                line-height: line-height(15, 23);
+            }
+        }
+
+        .btn{
+            position:relative;
+        }
+
+        &--medium {
+            padding-bottom: 100px;
+
+            @include breakpoint($sm) {
+                padding-bottom: 60px;
+            }
+
+            @include breakpoint($xs) {
+                padding: 0 45px 30px 45px;
+            }
+        }
+
+        &--big {
+            padding-bottom: 160px;
+            @include breakpoint($md) {
+                padding-bottom: 120px;
+            }
+
+            @include breakpoint($sm) {
+                padding-bottom: 60px;
+            }
+
+            @include breakpoint($xs) {
+                padding: 0 45px 40px 45px;
+            }
+
+            h1 {
+                font-size: em(40);
+                line-height: line-height(40,48);
+                margin-bottom: 15px;
+
+                @include breakpoint($md) {
+                    font-size: em(34);
+                    line-height: line-height(34,38);
+                }
+
+                @include breakpoint($sm) {
+                    font-size: em(30);
+                    line-height: line-height(30,35);
+                }
+
+                @include breakpoint($xs) {
+                    font-size: em(26);
+                    line-height: line-height(26,30);
+                }
+            }
+
+            p {
+                line-height: line-height(17,28);
+                margin-bottom: 44px;
+
+                @include breakpoint($xs) {
+                    margin-bottom: 25px;
+                }
+            }
+
+            .btn {
+                min-width: 214px;
+                text-align: center;
+
+                @include breakpoint($xs) {
+                    min-width: inherit;
+                }
+            }
+        }
+
+        &--double {
+            width: 50%;
+
+            @include breakpoint($sm) {
+                width: 100%;
+                display: block;
+            }
+
+            @include breakpoint($xs) {
+                padding-top: 45px;
+            }
+
+            &:first-child {
+                border-right: 1px solid #fff;
+
+                @include breakpoint($sm) {
+                    border: 0;
+                }
+            }
+
+            &:last-child {
+                border-left: 1px solid #fff;
+
+                @include breakpoint($sm) {
+                    border: 0;
+                    border-top: 2px solid #fff;
+                }
+            }
+        }
+
+        &--brochure{
+            padding-bottom:120px;
+            @include breakpoint($xs) {
+                padding: 60px 45px 40px 45px;
+            }
+            h1{
+                color:$main-color;
+                @extend .font-main-medium;
+                font-size: em(40);
+                line-height: line-height(40,48);
+                @include breakpoint($xs) {
+                    font-size: em(26);
+                    line-height: line-height(26,30);
+                }
+            }
+            p{
+                color: #686b6e;
+                max-width:505px;
+                font-size: em(17);
+                line-height: line-height(17,25);
+                @include breakpoint($xs) {
+                    font-size: em(15);
+                    line-height: line-height(15, 23);
+                }
+            }
+        }
+
+        &--brochure-cta{
+            vertical-align:middle;
+            padding:40px 40px 40px 110px;
+            @include breakpoint($md) {
+                padding-left:50px;
+            }
+            h1{
+                @extend .font-main-medium;
+                font-size: em(28);
+                line-height: line-height(28,35);
+                margin-bottom: 10px;
+                @include breakpoint($xs) {
+
+                }
+            }
+            p{
+                max-width:380px;
+                font-size: em(14);
+                line-height: line-height(14,24);
+                margin-bottom: 25px;
+                @include breakpoint($xs) {
+
+                }
+            }
+        }
+    }
+
+    &__info{
+        position:relative;
+        z-index:1;
+    }
+}
+
+.no-touchevents{
+    .cover{
+        .cover__image{
+            height:150%;
+        }
+        &:first-child{
+            .cover__image{
+                height:100%;
+            }
+        }
+    }
+}
+
+.breadcrumb {
+    padding: 18px 50px 8px;
+    &--pading-left-0{
+        padding-left:0;
+    }
+    @include breakpoint($xs) {
+        padding: 18px 30px 8px;
+    }
+
+    &:after {
+        content: '';
+        clear: both;
+        display: table;
+    }
+
+    &__list {
+        li {
+            float: left;
+            @extend .font-main-bold;
+            font-size: em(12);
+            color: #4a4a4a;
+            position: relative;
+            padding: 0 30px 0 0;
+            margin-bottom: 8px;
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:last-child {
+                &:after {
+                    display: none;
+                }
+            }
+
+            &:after {
+                border-bottom: 1px solid #95979b;
+                border-left: 1px solid #95979b;
+                content: "";
+                height: 8px;
+                width: 8px;
+                position: absolute;
+                right: 14px;
+                top: 3px;
+                @include transform(rotate(-140deg));
+            }
+
+            a {
+                color: #95979b;
+                @include transition(all,0.3s,0s,1);
+
+                &:hover {
+                    color: #4a4a4a;
+                }
+            }
+        }
+    }
+}
+
+.slider {
+    height: 626px;
+    @include breakpoint($md){
+        height: 526px;
+    }
+    @include breakpoint($sm){
+        height: 426px;
+    }
+    .slick-list, .slick-track {
+        height: 100%;
+    }
+
+    &__item{
+        &:after{
+            display:block;
+            position:absolute;
+            top:0;
+            left:0;
+            content:'';
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,0.32);
+        }
+    }
+
+    &__content {
+        height: 626px;
+        display: table;
+        width: 100%;
+        position:relative;
+        z-index:1;
+        @include breakpoint($md){
+            height: 526px;
+        }
+        @include breakpoint($sm){
+            height: 426px;
+        }
+    }
+
+    &__info {
+        display: table-cell;
+        vertical-align: middle;
+        padding: 0 130px;
+        @include breakpoint($sm){
+            padding: 0 40px;
+        }
+        h1 {
+            color: $white;
+            @extend .font-main-medium;
+            font-size: em(35);
+            line-height: line-height(35,40);
+            margin-bottom: 20px;
+            max-width: 550px;
+            @include breakpoint($xs){
+                font-size:em(32);
+                line-height:line-height(32, 36);
+            }
+        }
+
+        p {
+            color: $white;
+            font-size: em(17);
+            line-height: line-height(17,25);
+            max-width: 550px;
+            @include breakpoint($xs){
+                font-size:em(15);
+                line-height:line-height(15, 23);
+            }
+        }
+    }
+
+    .slick-arrow {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        display: block;
+        padding: 0 5px;
+        @include transform(translateY(-50%));
+        z-index: 1;
+        @include breakpoint($sm){
+            display:none;
+        }
+        svg {
+            fill: $white;
+            width: 15px;
+            height: 26px;
+            @include transition(all,0.3s,0s,1);
+        }
+
+        &.slick-prev {
+            left: 45px;
+            @include transform(rotate(180deg));
+            margin-top: -12px;
+        }
+
+        &.slick-next {
+            right: 45px;
+        }
+
+        &:hover {
+            svg {
+                fill: $main-color;
+            }
+        }
+    }
+
+    .slick-dots {
+        bottom: 25px;
+        list-style: none;
+        position: absolute;
+        left: 50%;
+        @include transform(translateX(-50%));
+        z-index: 10;
+
+        li {
+            cursor: pointer;
+            display: inline-block;
+            margin: 0 8px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &.slick-active {
+                button {
+                    background: $main-color;
+                }
+            }
+
+            button {
+                font-size: 0;
+                width: 12px;
+                height: 12px;
+                padding: 0;
+                border: 0;
+                display: block;
+                background-color: #e6e6e6;
+                border-radius: 50%;
+                @include transition(all,0.3s,0s,1);
+
+                &:hover {
+                    background: $main-color;
+                }
+            }
+        }
+    }
+}
+
+.gallery {
+    margin: 65px 0 45px;
+    padding: 0 25px;
+    display: inline-block;
+    @include breakpoint($sm){
+        margin: 45px 0 25px;
+        padding: 0 30px;
+    }
+    
+    &__item {
+        @include gallery(8 of $gallery_layout);
+        margin-bottom: gutter($gallery_layout);
+        display: block;
+        overflow:hidden;
+        &:nth-last-child(-n+3) {
+            margin-bottom: 0;
+        }
+        @include breakpoint($xs){
+            @include gallery(24 of $gallery_layout);
+            margin-bottom: 15px !important;
+            float:none;
+        }
+        img{
+            @include transition(all,0.5s,0s,2);
+            will-change:transform;
+        }
+        &:hover{
+            img{
+                @include transform(scale(1.05));
+            }
+        }
+    }
+
+}
+
+
+.top-offer-content{
+    margin-top:125px;
+    @include breakpoint($sm){
+        margin-top:80px;
+    }
+    @include breakpoint($xs){
+        margin-top:60px;
+    }
+    &__main-title{
+        text-align:center;
+        max-width:636px;
+        margin:0 auto;
+        p{
+            margin-bottom:0;
+        }
+    }
+}
+
+.top-offer {
+    display: table;
+    width: 100%;
+    height: 400px;
+    margin: 65px 0 45px;
+    padding: 0 50px;
+    @include breakpoint($lg){
+        height: 343px;
+    }
+    @include breakpoint($md){
+        padding: 0 30px;
+    }
+    @include breakpoint($xs){
+        margin:50px 0 0;
+    }
+    &__image {
+        display: table-cell;
+        width: 47.2%;
+        @include breakpoint($sm){
+            width:100%;
+            display:table-header-group;
+            height:250px;
+            float:left;
+            margin-bottom:30px;
+        }
+        @include breakpoint($sm){
+            height:200px;
+            margin-bottom:20px;
+        }
+    }
+
+    &__text-content {
+        display: table-cell;
+        vertical-align: middle;
+        width: 52.8%;
+        padding: 0 5.6%;
+        @include breakpoint($sm){
+            width:100%;
+            display:table-footer-group;
+            float:none;
+        }
+        h2 {
+            font-size: em(22);
+            line-height: (22,34);
+            max-width: 560px;
+            @include breakpoint($sm){
+                 font-size: em(17);
+                 line-height:line-height(17, 24);
+            }
+
+        }
+
+        p {
+            max-width: 560px;
+        }
+    }
+    &:last-child{
+        margin-bottom:0;
+    }
+    &:nth-child(2n+1){
+        .top-offer__text-content{
+            padding:0 3.3% 0 4%;
+            @include breakpoint($sm){
+                padding:40px 0;
+            }
+        }
+    }
+}
+
+.info-map{
+    height:530px;
+    @include breakpoint($md){
+        height:430px;
+    }
+    @include breakpoint($sm){
+        height:350px;
+    }
+    @include breakpoint($sm){
+        height:250px;
+    }
+}

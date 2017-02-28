@@ -1,0 +1,71 @@
+﻿.newsletter{
+    background-color: #efefef;
+    padding:65px 0 70px;
+    margin-bottom:45px;
+    border-width:1px 0 1px 0;
+    border-color:#e6e6e6;
+    border-style:solid;
+    @include breakpoint($xs){
+        border:0;
+    }
+    h2{
+        margin-bottom:10px;
+    }
+    &__form{
+        max-width:635px;
+        margin:0 auto;
+        text-align:center;
+    }
+    &__info{
+        margin-bottom:22px;
+        font-size:em(17);  
+        @include breakpoint($xs){
+            font-size:em(16);  
+            line-height:line-height(16, 26);
+            margin-bottom:27px;
+        }
+    }
+    &__input{
+        float:left;
+        width:70%;
+        height:52px;
+        padding:0 18px;
+        font-size:em(15);
+        border-width:1px 0 1px 1px;
+        border-color:#d4d4d4;
+        border-style:solid;
+        border-radius:3px 0 0 3px;
+        @include breakpoint($xs){
+            font-size:em(14);  
+            width:81.45%
+        }
+        @include placeholder {
+            color: #a8a8a8;
+            opacity:1;
+            @include breakpoint($xs){
+                color: $gray-color;   
+            }
+        }
+        @include breakpoint($xs){
+            border:0;   
+        }
+    }
+    &__cta{
+        float:left;
+        width:30%;
+        height:52px;
+        font-size:em(14px);
+        border-radius:0 3px 3px 0;
+        @include breakpoint($xs){
+            width:18.55%
+        }
+        .icon{
+            width:28px;
+            height:24px;
+            display:none;
+            @include breakpoint($xs){
+                display:inline;
+            }
+        }
+    }
+}

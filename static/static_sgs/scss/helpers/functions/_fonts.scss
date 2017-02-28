@@ -1,0 +1,37 @@
+@function line-height($psd-font-size, $psd-line-height: $psd-font-size) {
+    @return $psd-line-height/$psd-font-size;
+}
+
+@function em($pixels, $context: $browser-context) {
+    @if (unitless($pixels)) {
+        $pixels: $pixels * 1px;
+    }
+    @if (unitless($context)) {
+        $context: $context * 1px;
+    }
+    @return $pixels / $context * 1em;
+}
+
+@function rem($pixels, $context: $browser-context) {
+    @if (unitless($pixels)) {
+        $pixels: $pixels * 1px;
+    }
+    @if (unitless($context)) {
+        $context: $context * 1px;
+    }
+    @return $pixels / $context * 1rem;
+}
+
+// Max breakpoint
+$max-breakpoint: 1025;
+
+// This could be one of your media query breakpoint variables
+$wide-screen: "(min-width: #{$max-breakpoint}px)"; 
+
+// Function
+@function get-vw($target) {
+  // 1 vw is equal to 1% of the viewport width
+  $vw-context: ($max-breakpoint * .01) * 1px; // 1% viewport width
+  @return ($target/$vw-context) * 1vw;
+}
+

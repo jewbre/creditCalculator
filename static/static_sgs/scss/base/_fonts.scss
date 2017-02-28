@@ -1,0 +1,12 @@
+@include font-face(HelveticaNeue);
+@include font-face(HelveticaNeue-Bold);
+@include font-face(HelveticaNeue-Italic);
+@include font-face(HelveticaNeue-Light);
+@include font-face(HelveticaNeue-Medium);
+
+.font-main{ font-family:'HelveticaNeue';}
+.font-main-italic{ font-family:'HelveticaNeue-Italic';}
+.font-main-light{ font-family:'HelveticaNeue-Light';}
+.font-main-medium{ font-family:'HelveticaNeue-Medium';}
+.font-main-bold{ font-family:'HelveticaNeue-Bold';} 
+

@@ -1,0 +1,53 @@
+﻿.custom-check {
+    display: inline-block;
+    position: relative;
+    margin: 14px 0 0 12px;
+    float:left;
+    @include breakpoint($sm){
+        margin-left:0;
+    }
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    label {
+        color: #686b6e;
+        cursor: pointer;
+        font-size: em(13px);
+        padding-left: 36px;           
+        margin: 0;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        @include breakpoint($sm){
+            font-size: em(12px);
+            padding-left:25px;
+        }
+        &:after {
+            border: 1px solid #cccccc;
+            border-radius:2px;
+            background-color:#fff;
+            content: "";
+            height: 16px;
+            width: 16px;
+            position: absolute;  
+            top: 2px;
+            left: 0;                      
+        }
+        &.is-active{
+            &:before {
+                content: '';               
+                position: absolute;
+                top: 2px;
+                left: 4px;                
+                z-index: 1;
+                height: 12px;
+                width: 16px;
+                background: url('../img/check.png');
+            }       
+        }
+    }   
+}

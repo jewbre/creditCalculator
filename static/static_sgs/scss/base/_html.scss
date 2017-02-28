@@ -1,0 +1,82 @@
+html, body {
+    width: 100%;
+    display: block;
+}
+
+html {
+    font-weight: normal;
+    font-family: $font-main;
+    font-size: $browser-context+px;
+    color: $default-body-text-color;
+    line-height: line-height($browser-context, $browser-line-height);
+}
+
+body{
+    &.body-lock{
+        @include breakpoint($md){
+            overflow:hidden;
+        }        
+    }
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    transition: 1s all ease;
+}
+ 
+::-webkit-scrollbar-track {
+    border-radius: 0px;
+    background-color: $black;
+    @include transition(all,0.1s,0s,1);
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 0px;
+    background-color: $main-color;
+    @include transition(all,0.1s,0s,1);
+} 
+
+a {
+    text-decoration: none;
+    color: $default-body-link-color;
+
+    &:hover {
+    }
+}
+
+p{
+    color:$gray-color;
+    small{
+        font-size:em(14);
+        line-height:line-height(14,21);
+    }
+}
+
+input,
+select, 
+textarea {
+    outline: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+h2{
+    font-size:em(28);
+    @extend .font-main-medium;
+    line-height:line-height(28, 35);
+    @include breakpoint($sm){
+        font-size:em(22);
+        line-height:line-height(22, 27);
+    }
+}
+
+
+
+
+

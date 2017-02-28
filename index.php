@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="static/static_sgs/css/style.css">
 
+
     <?php
     /**
      * @var $fields array

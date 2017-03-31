@@ -288,5 +288,5 @@ class CalculationInstantiator {
 
 $(document).ready(() => {
     new CalculationInstantiator();
-    console.log('nesto');
+    console.log('nesto trece', 'nesto console.log');
 });

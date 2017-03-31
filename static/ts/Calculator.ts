@@ -288,4 +288,5 @@ class CalculationInstantiator {
 
 $(document).ready(() => {
     new CalculationInstantiator();
+    console.log('nesto drugo');
 });
